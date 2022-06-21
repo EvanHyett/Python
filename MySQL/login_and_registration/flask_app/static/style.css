@@ -1,0 +1,15 @@
+*{
+    margin: auto;
+    padding: auto;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
