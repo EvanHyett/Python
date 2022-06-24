@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="register">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <h1>Register</h1>
+            <form action="/create_user" method="POST">
+                First Name: <input type="text" name="first_name"><br>
+                Last Name: <input type="text" name="last_name"><br>
+                Email: <input type="text" name="email"><br>
+                Password: <input type="password" name="password"><br>
+                Confirm Password: <input type="password" name="confirm_password"><br>
+                <input type="submit">
+            </form>
+        </div>
+        <div class="login">
+            <h1>Login</h1>
+            <form action="/login" method="POST">
+                Email: <input type="text" name="email"><br>
+                Password: <input type="password" name="password"><br>
+                <input type="submit">
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </div>
+</body>
+</html>
